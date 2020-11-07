@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace RentalKendaraan_073.Models
 {
@@ -11,6 +12,7 @@ namespace RentalKendaraan_073.Models
         }
 
         public int IdKondisi { get; set; }
+        [Required(ErrorMessage = "Kondisi Kendaraan Wajib Diisi")]
         public string NamaKondisi { get; set; }
 
         public ICollection<Pengembalian> Pengembalian { get; set; }

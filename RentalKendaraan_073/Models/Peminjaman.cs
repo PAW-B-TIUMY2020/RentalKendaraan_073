@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace RentalKendaraan_073.Models
 {
@@ -14,7 +15,10 @@ namespace RentalKendaraan_073.Models
         public DateTime? TglPeminjaman { get; set; }
         public int? IdKendaraan { get; set; }
         public int? IdCustomer { get; set; }
+
         public int? IdJaminan { get; set; }
+        [RegularExpression("^[0-9]*$", ErrorMessage = "No HP Hanya Boleh Diisi Dengan Angka")]
+        [Required(ErrorMessage = "Biaya Wajib Diisi")]
         public int? Biaya { get; set; }
 
         public Jaminan IdCustomer1 { get; set; }
