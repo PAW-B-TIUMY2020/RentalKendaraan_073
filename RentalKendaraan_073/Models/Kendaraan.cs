@@ -17,6 +17,7 @@ namespace RentalKendaraan_073.Models
         public string NamaKendaraan { get; set; }
 
         [Required(ErrorMessage = "No Polisi Wajib Diisi")]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "No Polisi Hanya Boleh Diisi Dengan Angka")]
         public string NoPolisi { get; set; }
 
         [RegularExpression("^[0-9]*$", ErrorMessage = "No STNK Hanya Boleh Diisi Dengan Angka")]
