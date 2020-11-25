@@ -25,5 +25,6 @@ namespace RentalKendaraan_073.Models
         public Customer IdCustomerNavigation { get; set; }
         public Kendaraan IdKendaraanNavigation { get; set; }
         public ICollection<Pengembalian> Pengembalian { get; set; }
+        public object IdJaminanNavigation { get; internal set; }
     }
 }

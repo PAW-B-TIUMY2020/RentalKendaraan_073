@@ -83,7 +83,7 @@ namespace RentalKendaraan_073.Controllers
             //definisi jumlah data pada halaman
             int pageSize = 5;
 
-            return View(await PaginatedLi>.CreateAsync(menu.AsNoTracking(), pageNumber ?? 1, pageSize));
+            return View(await PaginatedList<Customer>.CreateAsync(menu.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
         // GET: Customers/Details/5
