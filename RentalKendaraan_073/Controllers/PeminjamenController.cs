@@ -24,7 +24,7 @@ namespace RentalKendaraan_073.Controllers
             //buat list menyimpan ketersediaan
             var ktsdList = new List<string>();
             //Query mengambil data
-            var ktsdQuery = from d in _context.Peminjaman orderby d.IdJaminanNavigation.NamaJaminan.ToString() select d.IdJaminanNavigation.NamaJaminan.ToString();
+            var ktsdQuery = from d in _context.Peminjaman orderby d.IdKendaraanNavigation.NamaKendaraan.ToString() select d.IdKendaraanNavigation.NamaKendaraan.ToString();
 
             ktsdList.AddRange(ktsdQuery.Distinct());
 
@@ -85,7 +85,9 @@ namespace RentalKendaraan_073.Controllers
             int pageSize = 5;
 
             return View(await PaginatedList<Peminjaman>.CreateAsync(menu.AsNoTracking(), pageNumber ?? 1, pageSize));
+            //return View(await menu.ToListAsync());
         }
+
 
         // GET: Peminjamen/Details/5
         public async Task<IActionResult> Details(int? id)
